@@ -3,9 +3,12 @@ import Home from "../views/Home.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: "/metric-overview",
+    name: "metric-overview",
+    component: () =>
+      import(
+        /* webpackChunkName: "metric-overview" */ "@/views/metric/metric-overview.vue"
+      ),
   },
   {
     path: "/about",
